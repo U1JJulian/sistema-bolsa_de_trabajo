@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
+
+namespace system_bdt.Models.Entities
+{
+	[Table("rqs_dgr")]
+	public class RequestDegree
+	{
+        [Key, Column(Order = 0)]
+        public int rqs_id { get; set; }
+
+        [Key, Column(Order = 1)]
+        public int dgr_id { get; set; }
+
+        [ForeignKey("rqs_id")]
+        public virtual Request Request { get; set; }
+
+        [ForeignKey("dgr_id")]
+        public virtual Degree Degree { get; set; }
+    }
+}
